@@ -1,0 +1,14 @@
+integrations:
+  - name: "gitea_pr_integration"
+    source_url: "https://gitea.example.com/webhook"
+    destination_url: "https://chat.googleapis.com/v1/spaces/AAA.../messages?key=XXXXX"
+    event_name: "pull_request"
+    message_format: "PR {action} por el usuario {pr_user} en el repositorio {repository}. Título: '{pr_title}'"
+    secret: "secret_pr_123"
+
+  - name: "gitea_push_integration"
+    source_url: "https://gitea.example.com/webhook"
+    destination_url: "https://chat.googleapis.com/v1/spaces/BBB.../messages?key=YYYYY"
+    event_name: "push"
+    message_format: "Push realizado por {pusher} en el repositorio {repository} con {commit_count} commit(s)."
+    secret: "secret_push_456"
